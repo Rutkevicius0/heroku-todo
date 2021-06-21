@@ -1,0 +1,40 @@
+.add-todo-container {
+  color: rgba(255, 250, 250, 0.897);
+  padding: 0.5em 0;
+}
+.add-todo-input {
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  height: 2em;
+  border: 1px solid rgba(255, 250, 250, 0.897);
+  border-radius: 1em;
+  background-color: transparent;
+  text-decoration: rgba(255, 250, 250, 0.897);
+}
+input,
+select,
+textarea {
+  color: rgba(255, 250, 250, 0.897);
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid rgba(255, 250, 250, 0.897);
+  border-radius: 0.5em;
+  padding: 0.1em 0.2em;
+}
+
+input::placeholder {
+  color: rgba(255, 250, 250, 0.897);
+  background-color: transparent;
+}
+textarea:focus,
+input:focus {
+  color: rgba(255, 250, 250, 0.897);
+  background-color: transparent;
+  border: none;
+}
+.is-invalid {
+  border: 1px solid rgb(255, 98, 98);
+}
+.is-invalid::placeholder {
+  color: rgb(255, 98, 98);
+}

@@ -1,0 +1,43 @@
+.page-container {
+  color: white;
+  background-color: #8ec5fc23;
+  background-image: linear-gradient(62deg, #8ec5fc81 0%, #e0c3fc85 100%);
+  border-radius: 1em;
+  box-shadow: 1px 1px 5px rgba(255, 250, 250, 0.897);
+  width: 60%;
+  margin: 2em auto;
+  padding: 1em;
+  text-align: center;
+}
+.main-title {
+  color: rgba(255, 250, 250, 0.897);
+  /* margin-top: 2em; */
+}
+.page-link {
+}
+.link-button {
+  background-color: rgba(255, 250, 250, 0.699);
+  border: none;
+  padding: 0.5em 1em;
+  margin: 1em 0 2em 0;
+  box-shadow: 1px 1px 5px rgba(255, 250, 250, 0.897);
+  border-radius: 1em;
+}
+.page-text {
+  margin: 2em 0;
+}
+.contact-container {
+  padding: 1em 0;
+  margin: 2em auto 0 auto;
+  background-color: rgba(255, 250, 250, 0.397);
+  box-shadow: 1px 1px 5px rgba(255, 250, 250, 0.897);
+  width: 60%;
+  border-radius: 1em;
+}
+.photo-id {
+  height: 4em;
+  border-radius: 50%;
+}
+.social-icon {
+  margin: 0.2em;
+}

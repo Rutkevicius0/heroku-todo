@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend json ",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "front": "npm start --prefix client"
+  },
+  "author": "O.R.",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "cors": "^2.8.5"
+  }
+}
