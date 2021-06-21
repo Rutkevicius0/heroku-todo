@@ -4,6 +4,8 @@ const express = require('express');
 
 const app = express();
 
+const path = require('path');
+
 const cors = require('cors');
 
 const mongoose = require('mongoose');
@@ -17,6 +19,17 @@ app.use(express.json());
 const todoApi = require('./api/todoApi');
 
 app.use('/', todoApi);
+
+const rootBuild = path.join(__dirname, 'client', 'build');
+
+//pasitikrinti ar musu aplinka yra production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(rootBuild));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join('index.html', { root: rootBuild }));
+  });
+}
 
 mongoose
   .connect(process.env.MONGO_CONN_STRING, {
