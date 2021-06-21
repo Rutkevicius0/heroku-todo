@@ -10,8 +10,6 @@ const cors = require('cors');
 
 const mongoose = require('mongoose');
 
-const PORT = process.env.PORT || 3002;
-
 app.use(cors());
 //midlleware - to get req.body in json
 app.use(express.json());
@@ -23,16 +21,16 @@ app.use('/', todoApi);
 const rootBuild = path.join(__dirname, 'client', 'build');
 
 //pasitikrinti ar musu aplinka yra production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(rootBuild));
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(rootBuild));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join('index.html', { root: rootBuild }));
-  });
-}
-
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.join('index.html', { root: rootBuild }));
+//   });
+// }
+const PORT = process.env.PORT || 3002;
 mongoose
-  .connect(process.env.MONGO_CONN_STRING, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
