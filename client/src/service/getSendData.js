@@ -1,7 +1,5 @@
 export default class GetSendData {
-  static todoApiUrl = `https://${process.env.HOST || 'localhost'}:${
-    process.env.PORT || 3002
-  }/api/todos`;
+  static todoApiUrl = `https://${process.env.HOST}/api/todos`;
 
   // static getAll(succesCallback) {
   //   fetch(GetSendData.todoApiUrl)
