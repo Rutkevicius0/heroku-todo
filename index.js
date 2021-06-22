@@ -29,31 +29,15 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 const PORT = process.env.PORT || 3002;
-// mongoose
-//   .connect(
-//     'mongodb+srv://Rutkevicius0:bmw535i@frankfurtaws.8fcpt.mongodb.net/ReactDB?retryWrites=true&w=majority',
-//     {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     },
-//   )
-//   .then((result) => {
-//     app.listen(PORT, console.log('backend online'));
-//   })
-//   .catch((err) => console.error(err.message));
-
-const connectDB = async () => {
-  try {
-    await mongoose.connect(
-      'mongodb+srv://Rutkevicius0:bmw535i@frankfurtaws.8fcpt.mongodb.net/ReactDB?retryWrites=true&w=majority',
-      {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-      },
-    );
-    console.log('MongoDB is Connected...');
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
-};
+mongoose
+  .connect(
+    'mongodb+srv://Rutkevicius0:bmw535i@frankfurtaws.8fcpt.mongodb.net/ReactDB?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  )
+  .then((result) => {
+    app.listen(PORT, console.log('backend online'));
+  })
+  .catch((err) => console.error(err.message));
