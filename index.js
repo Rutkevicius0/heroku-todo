@@ -30,10 +30,13 @@ const rootBuild = path.join(__dirname, 'client', 'build');
 // }
 const PORT = process.env.PORT || 3002;
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    'mongodb+srv://Rutkevicius0:bmw535i@frankfurtaws.8fcpt.mongodb.net/ReactDB?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  )
   .then((result) => {
     app.listen(PORT, console.log('backend online'));
   })
