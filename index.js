@@ -20,23 +20,20 @@ app.use('/', todoApi);
 
 const rootBuild = path.join(__dirname, 'client', 'build');
 
-//pasitikrinti ar musu aplinka yra production
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(rootBuild));
+// pasitikrinti ar musu aplinka yra production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(rootBuild));
 
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.join('index.html', { root: rootBuild }));
-//   });
-// }
+  app.get('*', (req, res) => {
+    res.sendFile(path.join('index.html', { root: rootBuild }));
+  });
+}
 const PORT = process.env.PORT || 3002;
 mongoose
-  .connect(
-    'mongodb+srv://Rutkevicius0:bmw535i@frankfurtaws.8fcpt.mongodb.net/ReactDB?retryWrites=true&w=majority',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-  )
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((result) => {
     app.listen(PORT, console.log('backend online'));
   })

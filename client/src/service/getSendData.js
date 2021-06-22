@@ -1,8 +1,7 @@
 export default class GetSendData {
-  static todoApiUrl = 'https://todo-mern-or.herokuapp.com/api/todos';
-  // static todoApiUrl = `https://${process.env.HEROKU_HOST || 'localhost'}:${
-  //   process.env.PORT || 3002
-  // }/api/todos`;
+  static todoApiUrl = `https://${process.env.HOST || 'localhost'}:${
+    process.env.PORT || 3002
+  }/api/todos`;
 
   // static getAll(succesCallback) {
   //   fetch(GetSendData.todoApiUrl)
