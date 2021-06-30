@@ -9,6 +9,9 @@
     "front": "npm start --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
+  "engines": {
+    "node": "14.17.0"
+  },
   "author": "O.R.",
   "license": "MIT",
   "dependencies": {
@@ -16,5 +19,6 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.13"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
