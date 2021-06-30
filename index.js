@@ -6,13 +6,13 @@ const app = express();
 
 const path = require('path');
 
-const cors = require({
-  origin: 'https://todo-mern-or.herokuapp.com/api/todos'
-});
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://todo-mern-or.herokuapp.com/api/todos'
+}));
 //midlleware - to get req.body in json
 app.use(express.json());
 
