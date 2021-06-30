@@ -6,7 +6,9 @@ const app = express();
 
 const path = require('path');
 
-const cors = require('cors');
+const cors = require({
+  origin: 'https://todo-mern-or.herokuapp.com/api/todos'
+});
 
 const mongoose = require('mongoose');
 
