@@ -10,9 +10,11 @@ const cors = require('cors');
 
 const mongoose = require('mongoose');
 
-app.use(cors({
-  origin: 'https://todo-mern-or.herokuapp.com/api/todos'
-}));
+app.use(
+  cors({
+    origin: 'https://todo-mern-or.herokuapp.com/api/todos',
+  }),
+);
 //midlleware - to get req.body in json
 app.use(express.json());
 
@@ -32,13 +34,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 const PORT = process.env.PORT || 3002;
 mongoose
-  .connect(
-    'mongodb+srv://Rutkevicius0:bmw535i@frankfurtaws.8fcpt.mongodb.net/ReactDB?retryWrites=true&w=majority',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-  )
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((result) => {
     app.listen(PORT, console.log('backend online'));
   })

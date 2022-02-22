@@ -14,7 +14,6 @@ router.get('/api/todos', (req, res) => {
 });
 
 router.post('/api/todos/new', (req, res) => {
-  console.log('i post gauta ', req.body);
   const newTodo = new Todo(req.body);
 
   newTodo

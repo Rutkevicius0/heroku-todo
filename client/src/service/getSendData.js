@@ -1,5 +1,4 @@
 export default class GetSendData {
-  // static todoApiUrl = 'https://todo-mern-or.herokuapp.com/api/todos';
   static todoApiUrl = 'https://todo-mern-or.herokuapp.com/api/todos';
 
   // static getAll(succesCallback) {
